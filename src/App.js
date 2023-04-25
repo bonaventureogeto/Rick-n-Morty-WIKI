@@ -58,6 +58,17 @@ const Home = () => {
   );
 };
 
-function App() {}
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/episodes" exact component={Episodes} />
+        <Route path="/location" exact component={Location} />
+      </Switch>
+    </Router>
+  );
+}
 
 export default App;
