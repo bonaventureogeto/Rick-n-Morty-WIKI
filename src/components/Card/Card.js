@@ -7,6 +7,34 @@ const Card = ({ results }) => {
     display = results.map((result) => {
       let { id, image, name, status, location } = result;
 
+      // (() => {
+      //   if (status === "Dead") {
+      //     return (
+      //       <div
+      //         className={`${styles.badge} position-absolute badge bg-danger`}
+      //       >
+      //         {status}
+      //       </div>
+      //     );
+      //   } else if (status === "Alive") {
+      //     return (
+      //       <div
+      //         className={`${styles.badge} position-absolute badge bg-success`}
+      //       >
+      //         {status}
+      //       </div>
+      //     );
+      //   } else {
+      //     return (
+      //       <div
+      //         className={`${styles.badge} position-absolute badge bg-secondary`}
+      //       >
+      //         {status}
+      //       </div>
+      //     );
+      //   }
+      // })();
+
       return (
         <div>
           <div
@@ -27,6 +55,7 @@ const Card = ({ results }) => {
   } else {
     <h1 className="text-center">Loading...</h1>;
   }
+
   return <div>{display}</div>;
 };
 
