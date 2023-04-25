@@ -38,3 +38,5 @@ const Episodes = () => {
     </div>
   );
 };
+
+export default Episodes;

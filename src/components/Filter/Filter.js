@@ -1,6 +1,7 @@
 import React from "react";
 // import Gender from "./category/Gender";
 // import Species from "./category/Species";
+import InputGroup from "./category/InputGroup";
 import Status from "./category/Status";
 
 const Filter = ({
@@ -9,6 +10,7 @@ const Filter = ({
   setStatus,
   setGender,
   setSpecies,
+  setNumber,
 }) => {
   let clear = () => {
     setStatus("");
@@ -30,6 +32,7 @@ const Filter = ({
       </div>
       <div className="accordion" id="accordionExample">
         <Status setStatus={setStatus} setPageNumber={setPageNumber} />
+        <InputGroup name="Location" changeID={setNumber} total={126} />
       </div>
     </div>
   );
