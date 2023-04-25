@@ -10,7 +10,7 @@ import Episodes from "./Pages/Episodes";
 import Location from "./Pages/Location";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-function App() {
+const Home = () => {
   let [fetchedData, setFetchedData] = useState([]);
   let { info, results } = fetchedData;
   let [pageNumber, setPageNumber] = useState(1);
@@ -56,6 +56,8 @@ function App() {
       />
     </div>
   );
-}
+};
+
+function App() {}
 
 export default App;
