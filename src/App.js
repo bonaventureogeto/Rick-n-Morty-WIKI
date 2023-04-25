@@ -8,12 +8,12 @@ import Search from "./components/Search/Search";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
-
   let [fetchedData, setFetchedData] = useState([]);
   let { info, results } = fetchedData;
   let [pageNumber, setPageNumber] = useState(1);
   let [search, setSearch] = useState("");
+
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
   useEffect(() => {
     (async () => {
