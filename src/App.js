@@ -6,6 +6,9 @@ import Filter from "./components/Filter/Filter";
 import Pagination from "./components/Pagination/Pagination";
 import Search from "./components/Search/Search";
 import Navbar from "./components/Navbar/Navbar";
+import Episodes from "./Pages/Episodes";
+import Location from "./Pages/Location";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   let [fetchedData, setFetchedData] = useState([]);
