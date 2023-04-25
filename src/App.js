@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
+import "./App.css";
 import React, { useState, useEffect } from "react";
 import Card from "./components/Card/Card";
 import Filter from "./components/Filter/Filter";
@@ -8,7 +9,12 @@ import Search from "./components/Search/Search";
 import Navbar from "./components/Navbar/Navbar";
 import Episodes from "./Pages/Episodes";
 import Location from "./Pages/Location";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 const Home = () => {
   let [fetchedData, setFetchedData] = useState([]);
@@ -29,32 +35,34 @@ const Home = () => {
   }, [api]);
 
   return (
-    <div className="App">
-      <h1 className="text-center mb-3">Characters</h1>
-      <Search setSearch={setSearch} setPageNumber={setPageNumber} />
-      <div className="container">
-        <div className="row">
-          <Filter
-            pageNumber={pageNumber}
-            status={status}
-            setStatus={setStatus}
-            setGender={setGender}
-            setSpecies={setSpecies}
-            setPageNumber={setPageNumber}
-          />
-          <div className="col-lg-8 col-12">
-            <div className="row">
-              <Card results={results} />
+    <>
+      <div className="App">
+        <h1 className="text-center mb-3">Characters</h1>
+        <Search setSearch={setSearch} setPageNumber={setPageNumber} />
+        <div className="container">
+          <div className="row">
+            <Filter
+              pageNumber={pageNumber}
+              status={status}
+              setStatus={setStatus}
+              setGender={setGender}
+              setSpecies={setSpecies}
+              setPageNumber={setPageNumber}
+            />
+            <div className="col-lg-8 col-12">
+              <div className="row">
+                <Card results={results} />
+              </div>
             </div>
           </div>
         </div>
+        <Pagination
+          info={info}
+          pageNumber={pageNumber}
+          setPageNumber={setPageNumber}
+        />
       </div>
-      <Pagination
-        info={info}
-        pageNumber={pageNumber}
-        setPageNumber={setPageNumber}
-      />
-    </div>
+    </>
   );
 };
 
@@ -62,11 +70,11 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/episodes" exact component={Episodes} />
-        <Route path="/location" exact component={Location} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/episodes" element={<Episodes />} />
+        <Route path="/location" element={<Location />} />
+      </Routes>
     </Router>
   );
 }
