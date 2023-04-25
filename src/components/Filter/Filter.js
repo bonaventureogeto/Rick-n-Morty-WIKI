@@ -26,11 +26,10 @@ const Filter = ({
         onClick={clear}
         className="text-primary text-decoration-underline text-center mb-3"
       >
-        {" "}
-        Clear Filters{" "}
+        Clear Filters
       </div>
       <div className="accordion" id="accordionExample">
-        {/* Category components will be placed here */}
+        <Status setStatus={setStatus} setPageNumber={setPageNumber} />
       </div>
     </div>
   );
