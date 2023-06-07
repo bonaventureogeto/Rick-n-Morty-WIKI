@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Rick-n-Morty-WIKI/static/css/main.82ce92d5.css",
+    "main.js": "/Rick-n-Morty-WIKI/static/js/main.d38305d9.js",
+    "index.html": "/Rick-n-Morty-WIKI/index.html",
+    "main.82ce92d5.css.map": "/Rick-n-Morty-WIKI/static/css/main.82ce92d5.css.map",
+    "main.d38305d9.js.map": "/Rick-n-Morty-WIKI/static/js/main.d38305d9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82ce92d5.css",
+    "static/js/main.d38305d9.js"
+  ]
+}
