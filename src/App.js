@@ -11,7 +11,6 @@ import Episodes from "./Pages/Episodes";
 import Location from "./Pages/Location";
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
   Routes,
 } from "react-router-dom";
